@@ -1,0 +1,496 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between mb20">
+        <h1 class="title-bar">All Tour</h1>
+        <div class="title-actions">
+            <a href="/tour/create" class="btn btn-primary">Add new tour</a>
+        </div>
+    </div>
+    <div class="filter-div d-flex justify-content-between ">
+        <div class="col-left">
+            <form method="post" action="/tour/bulkEdit"
+                class="filter-form filter-form-left d-flex justify-content-start">
+                <input type="hidden" name="_token" value="s3KHkToMYm9j4oZ3Lq9dySm9otNLUTrbxsA5Iu5B">
+                <select name="action" class="form-control">
+                    <option value=""> Bulk Actions </option>
+                    <option value="publish"> Publish </option>
+                    <option value="draft"> Move to Draft </option>
+                    <option value="pending">Move to Pending</option>
+                    <option value="clone"> Clone </option>
+                    <option value="delete"> Delete </option>
+                </select>
+                <button data-confirm="Do you want to delete?" class="btn-info btn btn-icon dungdt-apply-form-btn"
+                    type="button">Apply</button>
+            </form>
+        </div>
+        <div class="col-left">
+            <form method="get" action="/tour"
+                class="filter-form filter-form-right d-flex justify-content-end flex-column flex-sm-row" role="search">
+                
+                <input type="text" name="s" value="" placeholder="Search by name" class="form-control">
+                <select name="cate_id" class="form-control">
+                    <option value="">--All Category -- </option>
+                    <option value="1">City trips</option>
+                    <option value="2">Ecotourism</option>
+                    <option value="3">Escorted tour</option>
+                    <option value="4">Ligula</option>
+                </select>
+                <button class="btn-info btn btn-icon btn_search" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="text-right">
+        <p><i>Found 16 items</i></p>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form action="" class="bravo-form-item">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th width="60px"><input type="checkbox" class="check-all"></th>
+                                <th> Name</th>
+                                <th width="200px"> Location</th>
+                                <th width="130px"> Author</th>
+                                
+                                <th width="100px"> Reviews</th>
+                                <th width="100px"> Date</th>
+                                <th width="100px"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <div class="panel-body">
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="16">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/16">River Cruise
+                                            Tour on the Seine</a>
+                                    </td>
+                                    <td>Paris</td>
+                                    <td>
+                                        System Admin
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=16"
+                                            class="review-count-approved">
+                                            3
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="{% url 'edit_trip' %}"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="15">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/15">Cannes and
+                                            Antibes Night Tour</a>
+                                    </td>
+                                    <td>Paris</td>
+                                    <td>
+                                        Lynne Victoria
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=15"
+                                            class="review-count-approved">
+                                            2
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="{% url 'edit_trip' %}"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="14">
+                                    </td>
+                                    <td class="title">
+                                        <a href="{% url 'edit_trip' %}">San
+                                            Francisco Express Never Ceases</a>
+                                    </td>
+                                    <td>San Francisco</td>
+                                    <td>
+                                        System Admin
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=14"
+                                            class="review-count-approved">
+                                            4
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/14"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="13">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/13">Hollywood
+                                            Sign Small Group Tour in Luxury Van</a>
+                                    </td>
+                                    <td>Virginia</td>
+                                    <td>
+                                        Kaytlyn Alvapriya
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=13"
+                                            class="review-count-approved">
+                                            5
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/13"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="12">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/12">Segway Tour
+                                            of Washington, D.C. Highlights</a>
+                                    </td>
+                                    <td>San Francisco</td>
+                                    <td>
+                                        System Admin
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=12"
+                                            class="review-count-approved">
+                                            4
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/12"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="11">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/11">Trip of New
+                                            York – Discover America</a>
+                                    </td>
+                                    <td>New Jersey</td>
+                                    <td>
+                                        Elise Aarohi
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=11"
+                                            class="review-count-approved">
+                                            4
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/11"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="10">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/10">Giverny and
+                                            Versailles Small Group Day Trip</a>
+                                    </td>
+                                    <td>Los Angeles</td>
+                                    <td>
+                                        Kaytlyn Alvapriya
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=10"
+                                            class="review-count-approved">
+                                            3
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/10"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="9">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/9">Tastes and
+                                            Sounds of the South 2019</a>
+                                    </td>
+                                    <td>United States</td>
+                                    <td>
+                                        Lynne Victoria
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=9"
+                                            class="review-count-approved">
+                                            2
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/9"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="8">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/8">Pure Luxe in
+                                            Punta Mita</a>
+                                    </td>
+                                    <td>California</td>
+                                    <td>
+                                        Lynne Victoria
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=8"
+                                            class="review-count-approved">
+                                            2
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/8"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="7">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/7">Eastern
+                                            Discovery</a>
+                                    </td>
+                                    <td>New York, United States</td>
+                                    <td>
+                                        Kaytlyn Alvapriya
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=7"
+                                            class="review-count-approved">
+                                            3
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/7"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="6">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/6">Eastern
+                                            Discovery (Start New Orleans)</a>
+                                    </td>
+                                    <td>New York, United States</td>
+                                    <td>
+                                        Lynne Victoria
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=6"
+                                            class="review-count-approved">
+                                            3
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/6"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="5">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/5">Southwest
+                                            States (Ex Los Angeles) </a>
+                                    </td>
+                                    <td>New York, United States</td>
+                                    <td>
+                                        Lynne Victoria
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=5"
+                                            class="review-count-approved">
+                                            2
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/5"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="4">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/4">Paris
+                                            Vacation Travel </a>
+                                    </td>
+                                    <td>New York, United States</td>
+                                    <td>
+                                        System Admin
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=4"
+                                            class="review-count-approved">
+                                            3
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/4"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="3">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/3">Los Angeles
+                                            to San Francisco Express </a>
+                                    </td>
+                                    <td>Paris</td>
+                                    <td>
+                                        Elise Aarohi
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=3"
+                                            class="review-count-approved">
+                                            3
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/3"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="2">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/2">New York:
+                                            Museum of Modern Art</a>
+                                    </td>
+                                    <td>Paris</td>
+                                    <td>
+                                        System Admin
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=2"
+                                            class="review-count-approved">
+                                            2
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/2"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="publish">
+                                    <td><input type="checkbox" name="ids[]" class="check-item" value="1">
+                                    </td>
+                                    <td class="title">
+                                        <a href="/edit/1">American
+                                            Parks Trail end Rapid City</a>
+                                    </td>
+                                    <td>Paris</td>
+                                    <td>
+                                        System Admin
+                                    </td>
+                                    
+                                    <td>
+                                        <a target="_blank"
+                                            href="=1"
+                                            class="review-count-approved">
+                                            3
+                                        </a>
+                                    </td>
+                                    <td>11/08/2021</td>
+                                    <td>
+                                        <a href="/edit/1"
+                                            class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

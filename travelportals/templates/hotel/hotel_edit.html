@@ -1,0 +1,1732 @@
+{% extends "index.html"%} {% load static %} {% block content%}
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+<div class="container-fluid">
+  <div class="row row-eq-height">
+    <div class="col-md-9">
+      <div class="form-settings">
+        <div class="breadcrumb-page-bar" aria-label="breadcrumb">
+          <ul class="breadcrumb">
+            <li class="">
+              <a href="/"><i class="fa fa-home"></i> Home</a>
+              <i class="fa fa-angle-right"></i>
+            </li>
+            <li class="">
+              <a href="//hotel">Manage Hotels</a>
+              <i class="fa fa-angle-right"></i>
+            </li>
+            <li class="active">Edit</li>
+          </ul>
+
+          <div class="menu-user">
+            <i class="icofont-settings"></i>
+          </div>
+        </div>
+        <h2 class="title-bar no-border-bottom">
+          Edit: Parian Holiday Villas
+          <div class="title-action">
+            <a class="btn btn-info" href="//hotel/room/9/index">
+              <i class="fa fa-hand-o-right"></i> Manage Rooms
+            </a>
+            <a href="//hotel/9/availability" class="btn btn-warning">
+              <i class="fa fa-calendar"></i> Availability Rooms
+            </a>
+          </div>
+        </h2>
+
+        <div class="content">
+          <form action="/" method="post">
+            <input
+              type="hidden"
+              name="_token"
+              value="8D1Jf0ylM0OiBEBAS7ebh8yOxFhTj3nA0LUgG8eG"
+            />
+
+            
+            <div class="form-group">
+            
+              <div class="nav  nav-fill p-md-3" id="myTab" role="tablist">
+                <a class="nav-item" data-toggle="tab" href="#nav-content" aria-selected="true" class="active" >1. Content</a>
+                <a class="nav-item"data-toggle="tab"href="#nav-tour-location"aria-selected="false">2. Locations</a
+                >
+                <a class="nav-item" data-toggle="tab" href="#nav-tour-pricing" aria-selected="false" >3. Pricing</a
+                >
+                <a class="nav-item" data-toggle="tab" href="#nav-attribute" aria-selected="false" >4. Attributes</a
+                >
+              </div>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-tour-content">
+                  <div class="card">
+                    <div class="card-title"><strong>Hotel Content</strong></div>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label>Title</label>
+                        <input
+                          type="text"
+                          value="Parian Holiday Villas"
+                          placeholder="Name of the hotel"
+                          name="title"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label">Content</label>
+                        <div id="editor1">
+                          <textarea
+                            class="content"
+                            name="editor1"
+                            val=""
+                          ></textarea>
+                        </div>
+
+                        <script>
+                          CKEDITOR.replace("editor1");
+                        </script>
+                      </div>
+
+                      <div class="card form-group">
+                        <label class="control-label">Banner Image</label>
+                        <div class="card-body form-group-image">
+                          <div
+                            class="
+                              dungdt-upload-box dungdt-upload-box-normal
+                              active
+                            "
+                            data-val="94"
+                          >
+                            <div class="upload-box" v-show="!value">
+                              <input
+                                type="hidden"
+                                name="banner_image_id"
+                                v-model="value"
+                                value="94"
+                              />
+                              <div class="text-center">
+                                <svg
+                                  id="next-dropzone"
+                                  width="100%"
+                                  height="100%"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 20"
+                                  ></svg>
+                                </svg>
+                              </div>
+                              <div class="text-center">
+                                <span
+                                  class="btn btn-primary btn-field-upload"
+                                  @click="openUploader"
+                                  >Upload image</span
+                                >
+                              </div>
+                            </div>
+                            <div class="attach-demo" title="Change file">
+                              <img
+                                src="/.jpg?time=1636367163"
+                                class="image-responsive"
+                              />
+                            </div>
+                            <div
+                              class="upload-actions justify-content-between"
+                              v-show="value"
+                            >
+                              <a
+                                class="
+                                  edit-img
+                                  btn btn-sm btn-primary
+                                  edit-single
+                                "
+                                data-file="/.jpg"
+                                ><i class="fa fa-edit"></i
+                              ></a>
+                              <a class="delete btn btn-sm btn-danger"
+                                ><i class="fa fa-trash"></i
+                              ></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label">Gallery</label>
+                        <div
+                          class="dungdt-upload-multiple"
+                          data-val="97,98,99,100,101,102"
+                        >
+                          <div class="upload-box" v-show="!value">
+                            <input
+                              type="hidden"
+                              name="gallery"
+                              v-model="value"
+                              value="97,98,99,100,101,102"
+                            />
+                            <div class="text-left">
+                              <span
+                                class="btn btn-info btn-sm btn-field-upload"
+                                @click="openUploader"
+                                ><i class="fa fa-plus-circle"></i> Select
+                                images</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title"><strong>Hotel Policy</strong></div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Hotel rating standard</label>
+                            <input
+                              type="number"
+                              value="5"
+                              placeholder="Eg: 5"
+                              name="star_rate"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group-item">
+                        <label class="control-label">Policy</label>
+                        <div class="g-items-header">
+                          <div class="row">
+                            <div class="col-md-5">Title</div>
+                            <div class="col-md-5">Content</div>
+                            <div class="col-md-1"></div>
+                          </div>
+                        </div>
+                        <div class="g-items">
+                        
+                         
+                          <div class="item" data-number="3">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <input
+                                  type="text"
+                                  name="policy[3][title]"
+                                  class="form-control"
+                                  value="Late check-out policy"
+                                  placeholder="Eg: What kind of foowear is most suitable ?"
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <textarea
+                                  name="policy[3][content]"
+                                  class="form-control"
+                                  placeholder="..."
+                                >
+- Late check-out is subject to room availability
+- 12:00 to 17:00 check-out: 50% room rate surcharge
+- After 17:00 check-out: 100% room rate surcharge</textarea
+                                >
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-right">
+                          <span class="btn btn-info btn-sm btn-add-item"
+                            ><i class="icon ion-ios-add-circle-outline"></i> Add
+                            item</span
+                          >
+                        </div>
+                        <div class="g-more hide">
+                          <div class="item" data-number="__number__">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <input
+                                  type="text"
+                                  __name__="policy[__number__][title]"
+                                  class="form-control"
+                                  placeholder="Eg: What kind of foowear is most suitable ?"
+                                />
+                              </div>
+                              <div class="col-md-6">
+                                <textarea
+                                  __name__="policy[__number__][content]"
+                                  class="form-control"
+                                  placeholder=""
+                                ></textarea>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=" border form-group">
+                    <label>Featured Image</label>
+                    <div
+                      class="dungdt-upload-box dungdt-upload-box-normal active"
+                      data-val="75"
+                    >
+                      <div class="upload-box" v-show="!value">
+                        <input
+                          type="hidden"
+                          name="image_id"
+                          v-model="value"
+                          value="75"
+                        />
+                        <div class="text-center">
+                          <svg id="next-dropzone" width="100%" height="100%">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 20"
+                            ></svg>
+                          </svg>
+                        </div>
+                        <div class="text-center">
+                          <span
+                            class="btn btn-primary btn-field-upload"
+                            @click="openUploader"
+                            >Upload image</span
+                          >
+                        </div>
+                      </div>
+                      <div class="attach-demo" title="Change file">
+                        <img
+                          src=""
+                          class="image-responsive"
+                        />
+                      </div>
+                      <div
+                        class="upload-actions justify-content-between"
+                        v-show="value"
+                      >
+                        <a
+                          class="edit-img btn btn-sm btn-primary edit-single"
+                          data-file="//uploads/demo/space/space-13.jpg"
+                          ><i class="fa fa-edit"></i
+                        ></a>
+                        <a class="delete btn btn-sm btn-danger"
+                          ><i class="fa fa-trash"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-tour-location">
+                  <div class="card">
+                    <div class="card-title"><strong>Locations</strong></div>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <label class="control-label">Location</label>
+                        <div class="form-group-smart-search">
+                          <div class="form-content">
+                            <div class="smart-search">
+                              <input
+                                type="text"
+                                class="
+                                  smart-search-location
+                                  parent_text
+                                  form-control
+                                "
+                                placeholder="-- Please Select --"
+                                value="Paris"
+                                data-onload="Loading..."
+                                data-default='[{"id":1,"title":" Paris"},{"id":2,"title":" New York, United States"},{"id":3,"title":" California"},{"id":4,"title":" United States"},{"id":5,"title":" Los Angeles"},{"id":6,"title":" New Jersey"},{"id":7,"title":" San Francisco"},{"id":8,"title":" Virginia"}]'
+                              />
+                              <input
+                                type="hidden"
+                                class="child_id"
+                                name="location_id"
+                                value="1"
+                              />
+                              
+                                <div class="message">Loading...</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label">Real address</label>
+                        <input
+                          type="text"
+                          name="address"
+                          id="customPlaceAddress"
+                          class="form-control pac-target-input"
+                          placeholder="Real address"
+                          value="Regal Cinemas Battery Park"
+                          autocomplete="off"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label"
+                          >The geographic coordinate</label
+                        >
+                        <div class="control-map-group">
+                          <div
+                            id="map_content"
+                            style="position: relative; overflow: hidden"
+                          >
+                            <div
+                              style="
+                                height: 100%;
+                                width: 100%;
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                background-color: rgb(229, 227, 223);
+                              "
+                            >
+                              <div style="overflow: hidden"></div>
+                              <div
+                                class="gm-style"
+                                style="
+                                  position: absolute;
+                                  z-index: 0;
+                                  left: 0px;
+                                  top: 0px;
+                                  height: 100%;
+                                  width: 100%;
+                                  padding: 0px;
+                                  border-width: 0px;
+                                  margin: 0px;
+                                "
+                              >
+                                <div
+                                  tabindex="0"
+                                  aria-label="Map"
+                                  aria-roledescription="map"
+                                  role="group"
+                                  style="
+                                    position: absolute;
+                                    z-index: 0;
+                                    left: 0px;
+                                    top: 0px;
+                                    height: 100%;
+                                    width: 100%;
+                                    padding: 0px;
+                                    border-width: 0px;
+                                    margin: 0px;
+                                    cursor: url('https://maps.gstatic.com/mapfiles/openhand_8_8.cur'),
+                                      default;
+                                    touch-action: pan-x pan-y;
+                                  "
+                                >
+                                  <div
+                                    style="
+                                      z-index: 1;
+                                      position: absolute;
+                                      left: 50%;
+                                      top: 50%;
+                                      width: 100%;
+                                      transform: translate(0px, 0px);
+                                    "
+                                  >
+                                    <div
+                                      style="
+                                        position: absolute;
+                                        left: 0px;
+                                        top: 0px;
+                                        z-index: 100;
+                                        width: 100%;
+                                      "
+                                    >
+                                      <div
+                                        style="
+                                          position: absolute;
+                                          left: 0px;
+                                          top: 0px;
+                                          z-index: 0;
+                                        "
+                                      >
+                                        <div
+                                          style="
+                                            position: absolute;
+                                            z-index: 988;
+                                            transform: matrix(
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              -141,
+                                              -205
+                                            );
+                                          "
+                                        >
+                                          <div
+                                            style="
+                                              position: absolute;
+                                              left: 0px;
+                                              top: 0px;
+                                              width: 256px;
+                                              height: 256px;
+                                            "
+                                          >
+                                            <div
+                                              style="
+                                                width: 256px;
+                                                height: 256px;
+                                              "
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      style="
+                                        position: absolute;
+                                        left: 0px;
+                                        top: 0px;
+                                        z-index: 101;
+                                        width: 100%;
+                                      "
+                                    ></div>
+                                    <div
+                                      style="
+                                        position: absolute;
+                                        left: 0px;
+                                        top: 0px;
+                                        z-index: 102;
+                                        width: 100%;
+                                      "
+                                    ></div>
+                                    <div
+                                      style="
+                                        position: absolute;
+                                        left: 0px;
+                                        top: 0px;
+                                        z-index: 103;
+                                        width: 100%;
+                                      "
+                                    >
+                                      <div
+                                        style="
+                                          position: absolute;
+                                          left: 0px;
+                                          top: 0px;
+                                          z-index: -1;
+                                        "
+                                      >
+                                        <div
+                                          style="
+                                            position: absolute;
+                                            z-index: 988;
+                                            transform: matrix(
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              -141,
+                                              -205
+                                            );
+                                          "
+                                        >
+                                          <div
+                                            style="
+                                              width: 256px;
+                                              height: 256px;
+                                              overflow: hidden;
+                                              position: absolute;
+                                              left: 0px;
+                                              top: 0px;
+                                            "
+                                          ></div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        style="
+                                          width: 27px;
+                                          height: 43px;
+                                          overflow: hidden;
+                                          position: absolute;
+                                          left: -14px;
+                                          top: -43px;
+                                          z-index: 0;
+                                        "
+                                      >
+                                        <img
+                                          alt=""
+                                          src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png"
+                                          draggable="false"
+                                          style="
+                                            position: absolute;
+                                            left: 0px;
+                                            top: 0px;
+                                            width: 27px;
+                                            height: 43px;
+                                            user-select: none;
+                                            border: 0px;
+                                            padding: 0px;
+                                            margin: 0px;
+                                            max-width: none;
+                                          "
+                                        />
+                                      </div>
+                                    </div>
+                                    <div
+                                      style="
+                                        position: absolute;
+                                        left: 0px;
+                                        top: 0px;
+                                        z-index: 0;
+                                      "
+                                    ></div>
+                                  </div>
+                                  <div
+                                    style="
+                                      z-index: 3;
+                                      position: absolute;
+                                      height: 100%;
+                                      width: 100%;
+                                      padding: 0px;
+                                      border-width: 0px;
+                                      margin: 0px;
+                                      left: 0px;
+                                      top: 0px;
+                                      touch-action: pan-x pan-y;
+                                    "
+                                  >
+                                    <div
+                                      style="
+                                        z-index: 4;
+                                        position: absolute;
+                                        left: 50%;
+                                        top: 50%;
+                                        width: 100%;
+                                        transform: translate(0px, 0px);
+                                      "
+                                    >
+                                      <div
+                                        style="
+                                          position: absolute;
+                                          left: 0px;
+                                          top: 0px;
+                                          z-index: 104;
+                                          width: 100%;
+                                        "
+                                      ></div>
+                                      <div
+                                        style="
+                                          position: absolute;
+                                          left: 0px;
+                                          top: 0px;
+                                          z-index: 105;
+                                          width: 100%;
+                                        "
+                                      ></div>
+                                      <div
+                                        style="
+                                          position: absolute;
+                                          left: 0px;
+                                          top: 0px;
+                                          z-index: 106;
+                                          width: 100%;
+                                        "
+                                      >
+                                        <div
+                                          tabindex="-1"
+                                          style="
+                                            width: 27px;
+                                            height: 43px;
+                                            overflow: hidden;
+                                            position: absolute;
+                                            left: -14px;
+                                            top: -43px;
+                                            z-index: 0;
+                                          "
+                                        >
+                                          <img
+                                            alt=""
+                                            src="https://maps.gstatic.com/mapfiles/transparent.png"
+                                            draggable="false"
+                                            usemap="#gmimap0"
+                                            style="
+                                              width: 27px;
+                                              height: 43px;
+                                              user-select: none;
+                                              border: 0px;
+                                              padding: 0px;
+                                              margin: 0px;
+                                              max-width: none;
+                                            "
+                                          /><map name="gmimap0" id="gmimap0"
+                                            ><area
+                                              log="miw"
+                                              coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75"
+                                              shape="poly"
+                                              tabindex="-1"
+                                              title=""
+                                              style="
+                                                cursor: pointer;
+                                                touch-action: none;
+                                              "
+                                          /></map>
+                                        </div>
+                                      </div>
+                                      <div
+                                        style="
+                                          position: absolute;
+                                          left: 0px;
+                                          top: 0px;
+                                          z-index: 107;
+                                          width: 100%;
+                                        "
+                                      ></div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="gm-style-moc"
+                                    style="
+                                      z-index: 4;
+                                      position: absolute;
+                                      height: 100%;
+                                      width: 100%;
+                                      padding: 0px;
+                                      border-width: 0px;
+                                      margin: 0px;
+                                      left: 0px;
+                                      top: 0px;
+                                      opacity: 0;
+                                    "
+                                  >
+                                    <p class="gm-style-mot"></p>
+                                  </div>
+                                </div>
+                                <iframe
+                                  aria-hidden="true"
+                                  frameborder="0"
+                                  tabindex="-1"
+                                  style="
+                                    z-index: -1;
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 0px;
+                                    left: 0px;
+                                    border: none;
+                                  "
+                                ></iframe>
+                                <div
+                                  style="
+                                    pointer-events: none;
+                                    width: 100%;
+                                    height: 100%;
+                                    box-sizing: border-box;
+                                    position: absolute;
+                                    z-index: 1000002;
+                                    opacity: 0;
+                                    border: 2px solid rgb(26, 115, 232);
+                                  "
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                          <input
+                            type="text"
+                            placeholder="Search by name..."
+                            class="
+                              bravo_searchbox
+                              form-control
+                              pac-target-input
+                            "
+                            autocomplete="off"
+                            onkeydown="return event.key !== 'Enter';"
+                          />
+                          <div class="g-control">
+                            <div class="form-group">
+                              <label>Map Latitude:</label>
+                              <input
+                                type="text"
+                                name="map_lat"
+                                class="form-control"
+                                value="19.161637"
+                                onkeydown="return event.key !== 'Enter';"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label>Map Longitude:</label>
+                              <input
+                                type="text"
+                                name="map_lng"
+                                class="form-control"
+                                value="72.997510"
+                                onkeydown="return event.key !== 'Enter';"
+                              />
+                            </div>
+                            <div class="form-group">
+                              <label>Map Zoom:</label>
+                              <input
+                                type="text"
+                                name="map_zoom"
+                                class="form-control"
+                                value="12"
+                                onkeydown="return event.key !== 'Enter';"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title"><strong>Surroundings</strong></div>
+                    <div class="card-body">
+                      <div class="form-group-item">
+                        <label class="control-label">Education</label>
+                        <div class="g-items-header">
+                          <div class="row">
+                            <div class="col-md-3">Name</div>
+                            <div class="col-md-3">Content</div>
+                            <div class="col-md-3">Distance</div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-1"></div>
+                          </div>
+                        </div>
+                        <div class="g-items"></div>
+                        <div class="text-right">
+                          <span class="btn btn-info btn-sm btn-add-item"
+                            ><i class="icon ion-ios-add-circle-outline"></i> Add
+                            item</span
+                          >
+                        </div>
+                        <div class="g-more hide">
+                          <div class="item" data-number="__number__">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <input
+                                  type="text"
+                                  __name__="surrounding[1][__number__][name]"
+                                  class="form-control"
+                                  placeholder="Sunny Beach"
+                                />
+                              </div>
+                              <div class="col-md-3">
+                                <textarea
+                                  __name__="surrounding[1][__number__][content]"
+                                  class="form-control"
+                                  placeholder=""
+                                ></textarea>
+                              </div>
+                              <div class="col-md-3">
+                                <input
+                                  type="number"
+                                  __name__="surrounding[1][__number__][value]"
+                                  class="form-control"
+                                  placeholder=""
+                                />
+                              </div>
+                              <div class="col-md-2">
+                                <select
+                                  __name__="surrounding[1][__number__][type]"
+                                  class="form-control"
+                                >
+                                  <option value="m">m</option>
+                                  <option value="km">km</option>
+                                </select>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group-item">
+                        <label class="control-label">Health</label>
+                        <div class="g-items-header">
+                          <div class="row">
+                            <div class="col-md-3">Name</div>
+                            <div class="col-md-3">Content</div>
+                            <div class="col-md-3">Distance</div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-1"></div>
+                          </div>
+                        </div>
+                        <div class="g-items"></div>
+                        <div class="text-right">
+                          <span class="btn btn-info btn-sm btn-add-item"
+                            ><i class="icon ion-ios-add-circle-outline"></i> Add
+                            item</span
+                          >
+                        </div>
+                        <div class="g-more hide">
+                          <div class="item" data-number="__number__">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <input
+                                  type="text"
+                                  __name__="surrounding[2][__number__][name]"
+                                  class="form-control"
+                                  placeholder="Sunny Beach"
+                                />
+                              </div>
+                              <div class="col-md-3">
+                                <textarea
+                                  __name__="surrounding[2][__number__][content]"
+                                  class="form-control"
+                                  placeholder=""
+                                ></textarea>
+                              </div>
+                              <div class="col-md-3">
+                                <input
+                                  type="number"
+                                  __name__="surrounding[2][__number__][value]"
+                                  class="form-control"
+                                  placeholder=""
+                                />
+                              </div>
+                              <div class="col-md-2">
+                                <select
+                                  __name__="surrounding[2][__number__][type]"
+                                  class="form-control"
+                                >
+                                  <option value="m">m</option>
+                                  <option value="km">km</option>
+                                </select>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group-item">
+                        <label class="control-label">Transportation</label>
+                        <div class="g-items-header">
+                          <div class="row">
+                            <div class="col-md-3">Name</div>
+                            <div class="col-md-3">Content</div>
+                            <div class="col-md-3">Distance</div>
+                            <div class="col-md-2"></div>
+                            <div class="col-md-1"></div>
+                          </div>
+                        </div>
+                        <div class="g-items"></div>
+                        <div class="text-right">
+                          <span class="btn btn-info btn-sm btn-add-item"
+                            ><i class="icon ion-ios-add-circle-outline"></i> Add
+                            item</span
+                          >
+                        </div>
+                        <div class="g-more hide">
+                          <div class="item" data-number="__number__">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <input
+                                  type="text"
+                                  __name__="surrounding[3][__number__][name]"
+                                  class="form-control"
+                                  placeholder="Sunny Beach"
+                                />
+                              </div>
+                              <div class="col-md-3">
+                                <textarea
+                                  __name__="surrounding[3][__number__][content]"
+                                  class="form-control"
+                                  placeholder=""
+                                ></textarea>
+                              </div>
+                              <div class="col-md-3">
+                                <input
+                                  type="number"
+                                  __name__="surrounding[3][__number__][value]"
+                                  class="form-control"
+                                  placeholder=""
+                                />
+                              </div>
+                              <div class="col-md-2">
+                                <select
+                                  __name__="surrounding[3][__number__][type]"
+                                  class="form-control"
+                                >
+                                  <option value="m">m</option>
+                                  <option value="km">km</option>
+                                </select>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-tour-pricing">
+                  <div class="card">
+                    <div class="card-title">
+                      <strong>Check in/out time</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group d-none">
+                        <label>Allowed full day booking</label>
+                        <br />
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="allow_full_day"
+                            value="1"
+                          />
+                          Enable full day booking
+                        </label>
+                        <div class="small">
+                          You can book room with full day <br />
+                          Eg: booking from 22-23, then all days 22 and 23 are
+                          full, other people cannot book
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Time for check in</label>
+                            <input
+                              type="text"
+                              value="12:00AM"
+                              placeholder="Eg: 12:00AM"
+                              name="check_in_time"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Time for check out</label>
+                            <input
+                              type="text"
+                              value="11:00AM"
+                              placeholder="Eg: 11:00AM"
+                              name="check_out_time"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="control-label"
+                              >Minimum advance reservations</label
+                            >
+                            <input
+                              type="number"
+                              name="min_day_before_booking"
+                              class="form-control"
+                              value=""
+                              placeholder="Ex: 3"
+                            />
+                            <i
+                              >Leave blank if you dont need to use the min day
+                              option</i
+                            >
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="control-label"
+                              >Minimum day stay requirements</label
+                            >
+                            <input
+                              type="number"
+                              name="min_day_stays"
+                              class="form-control"
+                              value=""
+                              placeholder="Ex: 2"
+                            />
+                            <i
+                              >Leave blank if you dont need to set minimum day
+                              stay option</i
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title"><strong>Pricing</strong></div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label class="control-label">Price</label>
+                            <input
+                              type="number"
+                              step="any"
+                              min="0"
+                              name="price"
+                              class="form-control"
+                              value="550.00"
+                              placeholder="Hotel Price"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-lg-6 d-none">
+                          <div class="form-group">
+                            <label class="control-label">Sale Price</label>
+                            <input
+                              type="number"
+                              step="any"
+                              name="sale_price"
+                              class="form-control"
+                              value=""
+                              placeholder="Hotel Sale Price"
+                            />
+                            <span
+                              ><i
+                                >If the regular price is less than the discount
+                                , it will show the regular price</i
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label
+                          ><input
+                            type="checkbox"
+                            name="enable_extra_price"
+                            checked=""
+                            value="1"
+                          />
+                          Enable extra price
+                        </label>
+                      </div>
+                      <div
+                        class="form-group-item"
+                        data-condition="enable_extra_price:is(1)"
+                      >
+                        <label class="control-label">Extra Price</label>
+                        <div class="g-items-header">
+                          <div class="row">
+                            <div class="col-md-5">Name</div>
+                            <div class="col-md-3">Price</div>
+                            <div class="col-md-3">Type</div>
+                            <div class="col-md-1"></div>
+                          </div>
+                        </div>
+                        <div class="g-items">
+                          <div class="item" data-number="0">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="g-lang">
+                                  <div class="title-lang">English</div>
+                                  <input
+                                    type="text"
+                                    name="extra_price[0][name]"
+                                    class="form-control"
+                                    value="Service VIP "
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Japanese</div>
+                                  <input
+                                    type="text"
+                                    name="extra_price[0][name_ja]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Egyptian</div>
+                                  <input
+                                    type="text"
+                                    name="extra_price[0][name_egy]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <input
+                                  type="number"
+                                  min="0"
+                                  name="extra_price[0][price]"
+                                  class="form-control"
+                                  value="200"
+                                />
+                              </div>
+                              <div class="col-md-3">
+                                <select
+                                  name="extra_price[0][type]"
+                                  class="form-control"
+                                >
+                                  <option selected="" value="one_time">
+                                    One-time
+                                  </option>
+                                  <option value="per_day">Per day</option>
+                                </select>
+                                <label>
+                                  <input
+                                    type="checkbox"
+                                    min="0"
+                                    name="extra_price[0][per_person]"
+                                    value="on"
+                                  />
+                                  Price per person
+                                </label>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item" data-number="1">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="g-lang">
+                                  <div class="title-lang">English</div>
+                                  <input
+                                    type="text"
+                                    name="extra_price[1][name]"
+                                    class="form-control"
+                                    value="Breakfasts"
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Japanese</div>
+                                  <input
+                                    type="text"
+                                    name="extra_price[1][name_ja]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Egyptian</div>
+                                  <input
+                                    type="text"
+                                    name="extra_price[1][name_egy]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <input
+                                  type="number"
+                                  min="0"
+                                  name="extra_price[1][price]"
+                                  class="form-control"
+                                  value="100"
+                                />
+                              </div>
+                              <div class="col-md-3">
+                                <select
+                                  name="extra_price[1][type]"
+                                  class="form-control"
+                                >
+                                  <option selected="" value="one_time">
+                                    One-time
+                                  </option>
+                                  <option value="per_day">Per day</option>
+                                </select>
+                                <label>
+                                  <input
+                                    type="checkbox"
+                                    min="0"
+                                    name="extra_price[1][per_person]"
+                                    value="on"
+                                  />
+                                  Price per person
+                                </label>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-right">
+                          <span class="btn btn-info btn-sm btn-add-item"
+                            ><i class="icon ion-ios-add-circle-outline"></i> Add
+                            item</span
+                          >
+                        </div>
+                        <div class="g-more hide">
+                          <div class="item" data-number="__number__">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="g-lang">
+                                  <div class="title-lang">English</div>
+                                  <input
+                                    type="text"
+                                    __name__="extra_price[__number__][name]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Japanese</div>
+                                  <input
+                                    type="text"
+                                    __name__="extra_price[__number__][name_ja]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Egyptian</div>
+                                  <input
+                                    type="text"
+                                    __name__="extra_price[__number__][name_egy]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Extra price name"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <input
+                                  type="number"
+                                  min="0"
+                                  __name__="extra_price[__number__][price]"
+                                  class="form-control"
+                                  value=""
+                                />
+                              </div>
+                              <div class="col-md-3">
+                                <select
+                                  __name__="extra_price[__number__][type]"
+                                  class="form-control"
+                                >
+                                  <option value="one_time">One-time</option>
+                                  <option value="per_day">Per day</option>
+                                </select>
+                                <label>
+                                  <input
+                                    type="checkbox"
+                                    min="0"
+                                    __name__="extra_price[__number__][per_person]"
+                                    value="on"
+                                  />
+                                  Price per person
+                                </label>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <h3 class="card-body-title app_get_locale">
+                        Service fee
+                      </h3>
+                      <div class="form-group app_get_locale">
+                        <label
+                          ><input
+                            type="checkbox"
+                            name="enable_service_fee"
+                            value="1"
+                          />
+                          Enable service fee
+                        </label>
+                      </div>
+                      <div
+                        class="form-group-item"
+                        data-condition="enable_service_fee:is(1)"
+                        style="display: none"
+                      >
+                        <label class="control-label">Buyer Fees</label>
+                        <div class="g-items-header">
+                          <div class="row">
+                            <div class="col-md-5">Name</div>
+                            <div class="col-md-3">Price</div>
+                            <div class="col-md-3">Type</div>
+                            <div class="col-md-1"></div>
+                          </div>
+                        </div>
+                        <div class="g-items"></div>
+                        <div class="text-right">
+                          <span class="btn btn-info btn-sm btn-add-item"
+                            ><i class="icon ion-ios-add-circle-outline"></i> Add
+                            item</span
+                          >
+                        </div>
+                        <div class="g-more hide">
+                          <div class="item" data-number="__number__">
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="g-lang">
+                                  <div class="title-lang">English</div>
+                                  <input
+                                    type="text"
+                                    __name__="service_fee[__number__][name]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Fee name"
+                                  />
+                                  <input
+                                    type="text"
+                                    __name__="service_fee[__number__][desc]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Fee desc"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Japanese</div>
+                                  <input
+                                    type="text"
+                                    __name__="service_fee[__number__][name_ja]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Fee name"
+                                  />
+                                  <input
+                                    type="text"
+                                    __name__="service_fee[__number__][desc_ja]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Fee desc"
+                                  />
+                                </div>
+                                <div class="g-lang">
+                                  <div class="title-lang">Egyptian</div>
+                                  <input
+                                    type="text"
+                                    __name__="service_fee[__number__][name_egy]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Fee name"
+                                  />
+                                  <input
+                                    type="text"
+                                    __name__="service_fee[__number__][desc_egy]"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Fee desc"
+                                  />
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <input
+                                  type="number"
+                                  min="0"
+                                  step="0.1"
+                                  __name__="service_fee[__number__][price]"
+                                  class="form-control"
+                                  value=""
+                                />
+                                <select
+                                  __name__="service_fee[__number__][unit]"
+                                  class="form-control"
+                                >
+                                  <option value="fixed">Fixed</option>
+                                  <option value="percent">Percent</option>
+                                </select>
+                              </div>
+                              <div class="col-md-3">
+                                <select
+                                  __name__="service_fee[__number__][type]"
+                                  class="form-control d-none"
+                                >
+                                  <option value="one_time">One-time</option>
+                                </select>
+                                <label>
+                                  <input
+                                    type="checkbox"
+                                    min="0"
+                                    __name__="service_fee[__number__][per_person]"
+                                    value="on"
+                                  />
+                                  Price per person
+                                </label>
+                              </div>
+                              <div class="col-md-1">
+                                <span
+                                  class="btn btn-danger btn-sm btn-remove-item"
+                                  ><i class="fa fa-trash"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-attribute">
+                  <div class="card">
+                    <div class="card-title">
+                      <strong>Attribute: Property type</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="terms-scrollable">
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="32" />
+                          <span class="term-name">Apartments</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="33" />
+                          <span class="term-name">Hotels</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="34" />
+                          <span class="term-name">Homestays</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="35" />
+                          <span class="term-name">Villas</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="36" />
+                          <span class="term-name">Boats</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="37" />
+                          <span class="term-name">Motels</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="38" />
+                          <span class="term-name">Resorts</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="39" />
+                          <span class="term-name">Lodges</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="40" />
+                          <span class="term-name">Holiday homes</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="41" />
+                          <span class="term-name">Cruises</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">
+                      <strong>Attribute: Facilities</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="terms-scrollable">
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="42"
+                          />
+                          <span class="term-name">Wake-up call</span>
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="43"
+                          />
+                          <span class="term-name">Car hire</span>
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="44"
+                          />
+                          <span class="term-name">Bicycle hire</span>
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="45"
+                          />
+                          <span class="term-name">Flat Tv</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="46" />
+                          <span class="term-name"
+                            >Laundry and dry cleaning</span
+                          >
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="47"
+                          />
+                          <span class="term-name">Internet – Wifi</span>
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="48"
+                          />
+                          <span class="term-name">Coffee and tea</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">
+                      <strong>Attribute: Hotel Service</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="terms-scrollable">
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="49"
+                          />
+                          <span class="term-name">Havana Lobby bar</span>
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="50"
+                          />
+                          <span class="term-name">Fiesta Restaurant</span>
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="51"
+                          />
+                          <span class="term-name"
+                            >Hotel transport services</span
+                          >
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="52" />
+                          <span class="term-name">Free luggage deposit</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="53" />
+                          <span class="term-name">Laundry Services</span>
+                        </label>
+                        <label class="term-item">
+                          <input
+                            checked=""
+                            type="checkbox"
+                            name="terms[]"
+                            value="54"
+                          />
+                          <span class="term-name">Pets welcome</span>
+                        </label>
+                        <label class="term-item">
+                          <input type="checkbox" name="terms[]" value="55" />
+                          <span class="term-name">Tickets</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">
+                      <strong>Attribute: Demo Promotor</strong>
+                    </div>
+                    <div class="card-body">
+                      <div class="terms-scrollable"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa fa-save"></i> Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#submitbtn").click(function (e) {
+    e.preventDefault();
+
+    var title = $("#title").val();
+
+    var content = $("#editor1").val();
+    var cat = $("#is_featured checkbox:selected").val();
+    var checkbox_value = "";
+    $(":checkbox").each(function () {
+      var ischecked = $(this).is(":checked");
+      if (ischecked) {
+        checkbox_value += $(this).val() + "|";
+      }
+    });
+    alert("a");
+    $.ajax({
+      type: "POST",
+      url: "http://127.0.0.1:8000/h/hotel/",
+      headers: {
+        "X-CSRFToken": "{{csrf_token}}",
+      },
+      data: JSON.stringify({
+        Title: title,
+        Content: "this work  now",
+
+        slug: "gfgdfg",
+        Property_type: [1],
+        Facilities: ["d"],
+        Hotel_service: [1],
+        hotel_attribute: [1],
+      }),
+      success: function (response) {
+        console.log(response);
+      },
+      error: function (e) {
+        console.log(e);
+      },
+
+      dataType: "json",
+      cache: false,
+      contentType: "application/json",
+      processData: false,
+    });
+  });
+</script>
+{%endblock%}

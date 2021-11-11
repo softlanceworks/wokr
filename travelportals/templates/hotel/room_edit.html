@@ -1,0 +1,279 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content">
+  <div class="card">
+    <div class="card-title"><strong>Room information</strong></div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>Room Name <span class="text-danger">*</span></label>
+        <input
+          type="text"
+          required=""
+          value="Standard Double Room"
+          placeholder="Room name"
+          name="title"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group d-none">
+        <label>Room Description</label>
+        <textarea name="content" cols="30" rows="5" class="form-control">
+Room Sheraton comprises of 1 Double Bed or 2 Twin Beds, 2 Bedside Tables, a Desk &amp; Chair. The room is furnished with wall to wall carpeting, trendy furnishings and a balcony.Our ultramodern glass bathroom is equipped with hairdryer, magnifying shaving and make up mirror as well as all the amenities you could possible need during your stay.A Complimentary Bottle of Wine, Fresh Fruit and Mineral Water, are provided on arrival. Electric current: 220 Volts. Smoking rooms &amp; inter-connecting rooms are also available.</textarea
+        >
+      </div>
+      <div class="form-group">
+        <label>Feature Image </label>
+        <div
+          class="dungdt-upload-box dungdt-upload-box-normal active"
+          data-val="63"
+        >
+          <div class="upload-box" v-show="!value">
+            <input type="hidden" name="image_id" v-model="value" value="63" />
+            <div class="text-center">
+              <svg id="next-dropzone" width="100%" height="100%">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20">
+              </svg> </svg>
+            </div>
+            <div class="text-center">
+              <span
+                class="btn btn-primary btn-field-upload"
+                @click="openUploader"
+                >Upload image</span
+              >
+            </div>
+          </div>
+          <div class="attach-demo" title="Change file">
+            <img
+              src=""
+              class="image-responsive"
+            />
+          </div>
+          <div class="upload-actions justify-content-between" v-show="value">
+            <a
+              class="edit-img btn btn-sm btn-primary edit-single"
+              data-file=""
+              ><i class="fa fa-edit"></i
+            ></a>
+            <a class="delete btn btn-sm btn-danger"
+              ><i class="fa fa-trash"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Gallery</label>
+        <div class="dungdt-upload-multiple" data-val="97,98,99,100,101,102">
+        
+          <div class="upload-box" v-show="!value">
+            <input
+              type="hidden"
+              name="gallery"
+              v-model="value"
+              value="97,98,99,100,101,102"
+            />
+            <div class="text-left">
+              <span
+                class="btn btn-info btn-sm btn-field-upload"
+                @click="openUploader"
+                ><i class="fa fa-plus-circle"></i> Select images</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Price <span class="text-danger">*</span></label>
+            <input
+              type="number"
+              required=""
+              value="350.00"
+              min="1"
+              placeholder="Price"
+              name="price"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Number of room <span class="text-danger">*</span></label>
+            <input
+              type="number"
+              required=""
+              value="7"
+              min="1"
+              max="100"
+              placeholder="Number"
+              name="number"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label class="control-label">Minimum day stay requirements</label>
+            <input
+              type="number"
+              name="min_day_stays"
+              class="form-control"
+              value=""
+              placeholder="Ex: 2"
+            />
+            <i>Leave blank if you dont need to set minimum day stay option</i>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Number of beds </label>
+            <input
+              type="number"
+              value="2"
+              min="1"
+              max="10"
+              placeholder="Number"
+              name="beds"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Room Size </label>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="size"
+                value="200"
+                placeholder="Room size"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text"> sqft</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Max Adults </label>
+            <input
+              type="number"
+              min="1"
+              value="8"
+              name="adults"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Max Children </label>
+            <input
+              type="number"
+              min="0"
+              value="1"
+              name="children"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="control-label"
+              ><strong>Attribute: Room Amenities</strong></label
+            >
+            <div class="terms-scrollable">
+              <label class="term-item">
+                <input checked="" type="checkbox" name="terms[]" value="56" />
+                <span class="term-name">Wake-up call</span>
+              </label>
+              <label class="term-item">
+                <input checked="" type="checkbox" name="terms[]" value="57" />
+                <span class="term-name">Flat Tv</span>
+              </label>
+              <label class="term-item">
+                <input type="checkbox" name="terms[]" value="58" />
+                <span class="term-name">Laundry and dry cleaning</span>
+              </label>
+              <label class="term-item">
+                <input checked="" type="checkbox" name="terms[]" value="59" />
+                <span class="term-name">Internet – Wifi</span>
+              </label>
+              <label class="term-item">
+                <input checked="" type="checkbox" name="terms[]" value="60" />
+                <span class="term-name">Coffee and tea</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="control-label"
+              ><strong>Attribute: demo</strong></label
+            >
+            <div class="terms-scrollable">
+              <label class="term-item">
+                <input type="checkbox" name="terms[]" value="91" />
+                <span class="term-name">Demo Promotor</span>
+              </label>
+              <label class="term-item">
+                <input type="checkbox" name="terms[]" value="92" />
+                <span class="term-name">Demo Promotordd</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="form-group">
+        <label>Import url</label>
+        <input
+          type="text"
+          value=""
+          name="ical_import_url"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label>Export url</label>
+        <input
+          type="text"
+          value="https://sandbox.bookingcore.org/booking/export-ical/room/44"
+          class="form-control"
+        />
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label><strong>Status</strong> </label>
+            <select name="status" class="custom-select">
+              <option value="publish">Publish</option>
+              <option value="pending">Pending</option>
+              <option value="draft">Draft</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-success" type="submit">
+        <i class="fa fa-save"></i> Save Changes
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock content %}

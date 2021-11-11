@@ -1,0 +1,184 @@
+{% extends 'index.html' %} {% block content %}
+
+<div class="container-fluid card">
+  <div class="d-flex justify-content-between mb20">
+    <h1 class="title-bar">Tour Attributes</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb40">
+      <div class="card">
+        <div class="card-title">Add Attributes</div>
+        <div class="card-body">
+          <form action="/store/-1" method="post">
+            <input
+              type="hidden"
+              name="_token"
+              value="s3KHkToMYm9j4oZ3Lq9dySm9otNLUTrbxsA5Iu5B"
+            />
+            <div class="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                value=""
+                placeholder="Attribute name"
+                name="name"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label>Position Order</label>
+              <input
+                type="number"
+                min="0"
+                value=""
+                placeholder="Ex: 1"
+                name="position"
+                class="form-control"
+              />
+              <small>
+                The position will be used to order in the Filter page search.
+                The greater number is priority
+              </small>
+            </div>
+            <div class="form-group">
+              <label>Hide in detail service</label>
+              <br />
+              <label>
+                <input type="checkbox" name="hide_in_single" value="1" /> Enable
+                hide
+              </label>
+            </div>
+            <div class="form-group">
+              <label>Hide in filter search</label>
+              <br />
+              <label>
+                <input type="checkbox" name="hide_in_filter_search" value="1" />
+                Enable hide
+              </label>
+            </div>
+            <div class="">
+              <button class="btn btn-primary" type="submit">Add new</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="filter-div d-flex justify-content-between">
+        <div class="col-left">
+          <form
+            method="post"
+            action="/editAttrBulk"
+            class="filter-form filter-form-left d-flex justify-content-start"
+          >
+            <input
+              type="hidden"
+              name="_token"
+              value="s3KHkToMYm9j4oZ3Lq9dySm9otNLUTrbxsA5Iu5B"
+            />
+            <select name="action" class="form-control">
+              <option value="">Bulk Action</option>
+              <option value="delete">Delete</option>
+            </select>
+            <button
+              data-confirm="Do you want to delete?"
+              class="btn-info btn btn-icon dungdt-apply-form-btn"
+              type="button"
+            >
+              Apply
+            </button>
+          </form>
+        </div>
+        <div class="col-left">
+          <form
+            method="get"
+            action="#module/tour/attribute "
+            class="filter-form filter-form-right d-flex justify-content-end"
+            role="search"
+          >
+            <input
+              type="text"
+              name="s"
+              value=""
+              class="form-control"
+              placeholder="Search by name"
+            />
+            <button
+              class="btn-info btn btn-icon btn_search"
+              id="search-submit"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">All Attributes</div>
+        <div class="card-body">
+          <form class="bravo-form-item">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th width="60px">
+                    <input type="checkbox" class="check-all" />
+                  </th>
+                  <th>Name</th>
+                  <th>Position Order</th>
+                  <th class="">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      class="check-item"
+                      name="ids[]"
+                      value="2"
+                    />
+                  </td>
+                  <td class="title">
+                    <a href="/edit/2">Facilities</a>
+                  </td>
+                  <td>0</td>
+                  <td>
+                    <a href="/edit/2" class="btn btn-primary btn-sm"
+                      ><i class="fa fa-edit"></i> Edit
+                    </a>
+                    <a href="/terms/2" class="btn btn-sm btn-success"
+                      ><i class="fa fa"></i> Manage Terms
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      class="check-item"
+                      name="ids[]"
+                      value="1"
+                    />
+                  </td>
+                  <td class="title">
+                    <a href="/edit/1">Travel Styles</a>
+                  </td>
+                  <td>0</td>
+                  <td>
+                    <a href="/edit/1" class="btn btn-primary btn-sm"
+                      ><i class="fa fa-edit"></i> Edit
+                    </a>
+                    <a href="/terms/1" class="btn btn-sm btn-success"
+                      ><i class="fa fa"></i> Manage Terms
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

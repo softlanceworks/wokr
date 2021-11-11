@@ -1,0 +1,1098 @@
+{%extends "index.html"%}
+
+
+{%block content%}
+<div class="container-fluid">
+    <div class="d-flex justify-content-between mb20">
+    <h1 class="title-bar">All Reviews</h1>
+    </div>
+    <div class="filter-div d-flex justify-content-between ">
+    <div class="col-left">
+    <form method="post" action="#module/review/bulkEdit" class="filter-form filter-form-left d-flex justify-content-start">
+    <input type="hidden" name="_token" value="s3KHkToMYm9j4oZ3Lq9dySm9otNLUTrbxsA5Iu5B">
+    <select name="action" class="form-control">
+    <option value=""> Bulk Actions </option>
+    <option value="approved"> Approved </option>
+    <option value="pending"> Pending </option>
+    <option value="spam"> Spam </option>
+    <option value="trash"> Move to Trash </option>
+    <option value="delete"> Delete </option>
+    </select>
+    <button data-confirm="Do you want to delete?" class="btn-info btn btn-icon dungdt-apply-form-btn" type="button">Apply</button>
+    </form>
+    </div>
+    <div class="col-left">
+    <form method="post" action="#module/review " class="filter-form filter-form-right d-flex justify-content-end flex-column flex-sm-row" role="search">
+    <input type="hidden" name="_token" value="s3KHkToMYm9j4oZ3Lq9dySm9otNLUTrbxsA5Iu5B"> <select id="select_customer_id" class="form-control dungdt-select2-field select2-hidden-accessible" data-options="{&quot;ajax&quot;:{&quot;url&quot;:&quot;https:\/\/sandbox.bookingcore.org\/admin\/module\/user\/getForSelect2&quot;,&quot;dataType&quot;:&quot;json&quot;},&quot;allowClear&quot;:true,&quot;placeholder&quot;:&quot;-- Customer --&quot;}" name="customer_id" data-select2-id="select_customer_id" tabindex="-1" aria-hidden="true">
+    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 200px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-select_customer_id-container"><span class="select2-selection__rendered" id="select2-select_customer_id-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">-- Customer --</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+    <input type="text" name="s" value="" placeholder="Search by title" class="form-control">
+    <button class="btn-info btn btn-icon btn_search" type="submit">Search</button>
+    </form>
+    </div>
+    </div>
+    <div class="text-right">
+    <div class="header-status-control">
+    <a href="#module/review">All Reviews
+    <span>(204)</span> </a> -
+    <a href="#module/review?status=approved">Approved
+    <span>(204)</span></a> -
+    <a href="#module/review?status=pending">Pending
+    <span>(0)</span></a> -
+    <a href="#module/review?status=spam">Spam
+    <span>(0)</span></a> -
+    <a href="#module/review?status=trash">Trash
+    <span>(0)</span></a>
+    </div>
+    <p><i>Found 204 items</i></p>
+    </div>
+    <div class="panel">
+    <div class="panel-body">
+    <form class="bravo-form-item">
+    <div class="table-responsive">
+    <table class="table table-hover">
+    <thead>
+    <tr>
+    <th width="60px"><input type="checkbox" class="check-all"></th>
+    <th width="150px"> Author</th>
+    <th> Review Content</th>
+    <th width="250px"> In Response To</th>
+    <th width="80px"> Service</th>
+    <th width="100px"> Status</th>
+    <th width="140px"> Submitted On</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="204">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=15">Norah@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Good Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-204">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-204">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+     </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+      <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=12&amp;object_model=event">
+    Event of Washington, D.C. Highlights
+    </a>
+    <p>
+    <a target="_blank" href="#event/event-of-washington-dc-highlights">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="203">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=11">Davina@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Good Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-203">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-203">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=12&amp;object_model=event">
+    Event of Washington, D.C. Highlights
+    </a>
+    <p>
+    <a target="_blank" href="#event/event-of-washington-dc-highlights">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+     <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="202">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=16">Alia@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Good Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-202">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-202">
+    <div class="review-items">
+    <div class="row">
+     <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=12&amp;object_model=event">
+    Event of Washington, D.C. Highlights
+    </a>
+    <p>
+    <a target="_blank" href="#event/event-of-washington-dc-highlights">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="201">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=14">Elise@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Good Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-201">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-201">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+     <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=11&amp;object_model=event">
+    New York – Discover America
+    </a>
+    <p>
+    <a target="_blank" href="#event/new-york-discover-america">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="200">
+     </td>
+    <td>
+    <a href="#module/review?customer_id=9">Violet@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Great Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-200">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-200">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+     </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    </td>
+    <td>
+    <a href="#module/review?service_id=11&amp;object_model=event">
+    New York – Discover America
+    </a>
+    <p>
+    <a target="_blank" href="#event/new-york-discover-america">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="199">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=12">Yashashree@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Great Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star-o"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-199">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-199">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+     </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=10&amp;object_model=event">
+    Origami Crane Wedding Planners
+    </a>
+    <p>
+    <a target="_blank" href="#event/origami-crane-wedding-planners">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="198">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=14">Elise@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Easy way to discover the city</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-198">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-198">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+     <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=10&amp;object_model=event">
+    Origami Crane Wedding Planners
+    </a>
+    <p>
+    <a target="_blank" href="#event/origami-crane-wedding-planners">
+     <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="197">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=13">Nami@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Great Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-197">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-197">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+     <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=10&amp;object_model=event">
+    Origami Crane Wedding Planners
+    </a>
+    <p>
+    <a target="_blank" href="#event/origami-crane-wedding-planners">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="196">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=16">Alia@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Great Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-196">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-196">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     </ul>
+    </div>
+     <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=9&amp;object_model=event">
+    Northern Lights Event Planners
+    </a>
+    <p>
+    <a target="_blank" href="#event/northern-lights-event-planners">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    <tr class="approved">
+    <td><input type="checkbox" name="ids[]" class="check-item" value="195">
+    </td>
+    <td>
+    <a href="#module/review?customer_id=8">Diana@dev.com</a>
+    <p>
+    <a href="#module/review?s=127.0.0.1">127.0.0.1</a>
+    </p>
+    </td>
+    <td>
+    <strong>Great Trip</strong>
+    <p>Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+    <ul class="review-star left">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    <a class="btn-show-info-review right" data-toggle="collapse" href="#review-195">
+    More info
+    <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+    <div class="collapse" id="review-195">
+    <div class="review-items">
+    <div class="row">
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Service</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Organization</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+     <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Friendliness</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star-o"></i>
+    </li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Area Expert</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    <div class="item col-md-12 d-flex">
+    <label style="margin-right: 15px;">Safety</label>
+    <ul class="review-star">
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    <li><i class="fa fa-star"></i></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </td>
+    <td>
+    <a href="#module/review?service_id=9&amp;object_model=event">
+    Northern Lights Event Planners
+    </a>
+    <p>
+    <a target="_blank" href="#event/northern-lights-event-planners">
+    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Event
+    </a>
+    </p>
+    </td>
+    <td>
+    <a href="#module/review?service=Event" class="badge badge-dark">Event</a>
+    </td>
+    <td>
+    <a href="#module/review?status=approved" class="badge badge-approved">approved</a>
+    </td>
+    <td>11/02/2021 08:00</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </form>
+    <nav class="mt-2">
+    <ul class="pagination">
+    <li class="disabled page-item" aria-disabled="true" aria-label="« Previous">
+    <span aria-hidden="true" class="page-link">‹</span>
+    </li>
+    <li class="active page-item " aria-current="page"><span class="page-link">1</span></li>
+    <li><a class="page-link" href="#module/review?page=2">2</a></li>
+    <li><a class="page-link" href="#module/review?page=3">3</a></li>
+    <li><a class="page-link" href="#module/review?page=4">4</a></li>
+    <li><a class="page-link" href="#module/review?page=5">5</a></li>
+    <li><a class="page-link" href="#module/review?page=6">6</a></li>
+    <li><a class="page-link" href="#module/review?page=7">7</a></li>
+    <li><a class="page-link" href="#module/review?page=8">8</a></li>
+    <li><a class="page-link" href="#module/review?page=9">9</a></li>
+    <li><a class="page-link" href="#module/review?page=10">10</a></li>
+    <li class="disabled page-item" aria-disabled="true"><span class="page-link">...</span></li>
+    
+    <li><a class="page-link" href="#module/review?page=20">20</a></li>
+    <li><a class="page-link" href="#module/review?page=21">21</a></li>
+    <li class="page-item">
+    <a class="page-link" href="#module/review?page=2" rel="next" aria-label="Next »">›</a>
+    </li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+    </div>
+{%endblock%}

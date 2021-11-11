@@ -1,0 +1,197 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+
+<div class="main-content">
+    <nav class="main-breadcrumb" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+            <li class="breadcrumb-item ">
+                <a href="#/module/tour">Tour</a>
+            </li>
+            <li class="breadcrumb-item active">
+                Category
+            </li>
+        </ol>
+    </nav>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between mb20">
+            <h1 class="title-bar">Tour Categories</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb40">
+                <div class="card">
+                    <div class="card-title">Add Category</div>
+                    <div class="card-body">
+                        <form action="#/module/tour/category/store/-1" method="post">
+                            <input type="hidden" name="_token" value="s3KHkToMYm9j4oZ3Lq9dySm9otNLUTrbxsA5Iu5B">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" value="" placeholder="Category name" id="nameField" name="name"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Parent</label>
+                                <select name="parent_id" id='parent_id' class="form-control">
+                                    <option value="">-- Please Select --</option>
+                                    <option value="1"> City trips</option>
+                                    <option value="2"> Ecotourism</option>
+                                    <option value="3"> Escorted tour</option>
+                                    <option value="4"> Ligula</option>
+                                </select>
+                            </div>
+                            <div class="">
+                                <button class="btn btn-primary addbtn" type="submit">Add new</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="filter-div d-flex justify-content-between ">
+                    <div class="col-left">
+                        <form method="post" action="t"
+                            class="filter-form filter-form-left d-flex justify-content-start">
+                            <input type="hidden" name="_token" value="s3KHkToMYm9j4oZ3Lq9dySm9otNLUTrbxsA5Iu5B">
+                            <select name="action" class="form-control">
+                                <option value=""> Bulk Action </option>
+                                <option value="publish"> Publish </option>
+                                <option value="draft"> Move to Draft </option>
+                                <option value="delete"> Delete </option>
+                            </select>
+                            <button data-confirm="Do you want to delete?"
+                                class="btn-info btn btn-icon dungdt-apply-form-btn" type="button">Apply</button>
+                        </form>
+                    </div>
+                    <div class="col-left">
+                        <form method="get" action="#/module/tour/category "
+                            class="filter-form filter-form-right d-flex justify-content-end" role="search">
+                            <div type="text" name="csrfmiddlewaretoken" value="">
+                                {% csrf_token %}
+                            </div>
+
+
+                            <input type="text" name="s" value="" class="form-control" placeholder="Search by name">
+                            <button class="btn-info btn btn-icon btn_search" id="search-submit"
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form class="bravo-form-item">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="60px"><input type="checkbox" class="check-all"></th>
+                                        <th>Name</th>
+                                        <th class="slug d-none d-md-block">Slug</th>
+                                        <th class="status">Status</th>
+                                        <th class="date d-none d-md-block">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" name="ids[]" value="1" class="check-item">
+                                        </td>
+                                        <td class="title">
+                                            <a href="#/module/tour/category/edit/1"> City trips</a>
+                                        </td>
+                                        <td class="d-none d-md-block">city-trips</td>
+                                        <td><span class="badge badge-publish">publish</span></td>
+                                        <td class="d-none d-md-block">11/02/2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="ids[]" value="2" class="check-item">
+                                        </td>
+                                        <td class="title">
+                                            <a href="#/module/tour/category/edit/2"> Ecotourism</a>
+                                        </td>
+                                        <td class="d-none d-md-block">ecotourism</td>
+                                        <td><span class="badge badge-publish">publish</span></td>
+                                        <td class="d-none d-md-block">11/02/2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="ids[]" value="3" class="check-item">
+                                        </td>
+                                        <td class="title">
+                                            <a href="#/module/tour/category/edit/3"> Escorted tour</a>
+                                        </td>
+                                        <td class="d-none d-md-block">escorted-tour</td>
+                                        <td><span class="badge badge-publish">publish</span></td>
+                                        <td class="d-none d-md-block">11/02/2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="ids[]" value="4" class="check-item">
+                                        </td>
+                                        <td class="title">
+                                            <a href="#/module/tour/category/edit/4"> Ligula</a>
+                                        </td>
+                                        <td class="d-none d-md-block">ligula</td>
+                                        <td><span class="badge badge-publish">publish</span></td>
+                                        <td class="d-none d-md-block">11/02/2021</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:8000/t/categories_trip/",
+            data: "data",
+            dataType: "json",
+            success: function (response) {
+                console.log(response.data)
+                
+            }
+        });
+
+
+            $('.addbtn').click(function (e) {
+                e.preventDefault();
+
+
+                var cat = $('#parent_id option:selected').val()
+                var name = $('#nameField').val();
+                alert(cat)
+                $.ajax({
+                    type: 'POST',
+                    url: "http://127.0.0.1:8000/t/Tour/",
+                    headers: { "X-CSRFToken": '{{csrf_token}}' },
+                    data: JSON.stringify({
+                        "name": name,
+                        "Statu": "",
+                        "slug": "",
+                        "date": "2021-11-06",
+                        "Categories": [
+                            cat
+                        ]
+                    }),
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (e) {
+                        console.log(e);
+                    },
+                    dataType: "json",
+                    contentType: "application/json"
+                });
+            });
+
+        });
+    </script>
+
+    {% endblock content %}
